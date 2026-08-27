@@ -1,0 +1,101 @@
+/* ===== Shared page shell ===== */
+.orders-main, .pay-order-main {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem 4rem;
+  font-family: 'Poppins', sans-serif;
+}
+.orders-title { font-size: 2rem; font-weight: 700; color: #1c1c1c; margin-bottom: .25rem; }
+.orders-sub { color: grey; margin-bottom: 1.5rem; }
+.back-link { display:block; text-align:center; margin-top:18px; color:grey; font-size:.9rem; text-decoration:none; }
+
+.orders-empty { text-align:center; padding: 4rem 0; color: grey; }
+.orders-empty i { font-size: 3rem; color: #ffba00; margin-bottom: 1rem; display:block; }
+.orders-empty a { color:#ff6c00; font-weight:600; text-decoration:none; }
+
+.kicks-flash { padding:12px 16px; border-radius:10px; margin:0 0 18px; font-weight:600; }
+.kicks-flash.error { background:#fdecec; color:#a33; }
+.kicks-flash.success { background:#eaf7ee; color:#2E7D5B; }
+
+/* ===== Order card ===== */
+.order-card {
+  position: relative;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+.order-card.is-paid { border-color: rgba(46,125,91,0.3); padding-top: 100px; }
+
+.big-tick-badge {
+  position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
+  width: 64px; height: 64px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #eafaf1, #d4f2e2);
+  box-shadow: 0 4px 14px rgba(46,125,91,0.22);
+  display:flex; align-items:center; justify-content:center;
+}
+.big-tick-badge svg { width: 36px; height: 36px; }
+.big-tick-badge circle { stroke:#2E7D5B; stroke-width:2.2; fill:none; }
+.big-tick-badge path { stroke:#2E7D5B; stroke-width:3; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+
+.order-card-head { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:6px; }
+.order-card-head h2 { font-size:1.05rem; margin:0; font-weight:700; color:#1c1c1c; display:flex; align-items:center; gap:8px; }
+.order-pill { background:#fff3e0; color:#ff6c00; font-size:.7rem; font-weight:700; padding:3px 10px; border-radius:999px; }
+.order-date { font-size:.8rem; color:grey; }
+
+.order-meta { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:10px 0 16px; padding-bottom:14px; border-bottom:1px dashed #eee; }
+.status-chip { display:inline-flex; align-items:center; gap:6px; padding:4px 12px; border-radius:20px; font-size:.75rem; font-weight:700; }
+.status-chip.pending { background:#fff3e0; color:#a17400; }
+.status-chip.paid { background:rgba(46,125,91,0.12); color:#2E7D5B; }
+.payment-via { font-size:.8rem; color:grey; }
+.pay-now-btn { margin-left:auto; color:#ff6c00; font-weight:700; text-decoration:none; font-size:.85rem; }
+
+.order-line { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:10px 0; border-bottom:1px solid #f5f5f5; }
+.order-line:last-child { border-bottom:none; }
+.order-line-name { font-weight:600; font-size:.9rem; }
+.order-line-sub { font-size:.78rem; color:grey; margin-top:2px; }
+.order-line-total { font-weight:700; font-size:.9rem; white-space:nowrap; }
+
+.order-total-row { display:flex; justify-content:space-between; align-items:center; margin-top:16px; padding-top:14px; border-top:1px solid #eee; font-size:.95rem; }
+.order-total-row b { font-size:1.1rem; }
+
+/* ===== Delivery / tracker ===== */
+.delivery-card { margin-top:18px; background:#fff9f0; border:1px solid #ffe0b3; border-left:5px solid #ff6c00; border-radius:12px; padding:16px 18px; }
+.delivery-title { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:.85rem; font-weight:700; color:#ff6c00; margin-bottom:14px; }
+.delivery-status-chip.cancelled { background:#fde2e2; color:#991b1b; padding:4px 12px; border-radius:999px; font-size:.7rem; font-weight:700; }
+
+.status-tracker { display:flex; align-items:flex-start; gap:4px; margin-bottom:8px; }
+.tracker-step { flex:1; text-align:center; position:relative; }
+.tracker-step:not(:last-child)::after { content:''; position:absolute; top:8px; left:55%; width:90%; height:2px; background:#eee; z-index:0; }
+.tracker-step.done:not(:last-child)::after { background:#ff6c00; }
+.tracker-dot { width:16px; height:16px; border-radius:50%; background:#eee; margin:0 auto 6px; position:relative; z-index:1; }
+.tracker-step.done .tracker-dot { background:#ff6c00; }
+.tracker-step.active .tracker-dot { background:#ffba00; box-shadow:0 0 0 4px rgba(255,186,0,0.2); }
+.tracker-label { font-size:.68rem; font-weight:600; color:#bbb; }
+.tracker-step.done .tracker-label, .tracker-step.active .tracker-label { color:#ff6c00; }
+
+.delivery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:16px; }
+.delivery-label { display:block; font-size:.68rem; font-weight:700; color:grey; text-transform:uppercase; letter-spacing:.5px; margin-bottom:3px; }
+.delivery-value { font-size:.88rem; font-weight:600; color:#1c1c1c; word-break:break-word; }
+.delivery-address { grid-column: 1 / -1; }
+
+/* ===== Payment cards (checkout + pay_order) ===== */
+.kicks-payment-options { display:flex; flex-direction:column; gap:12px; margin:16px 0 20px; }
+.kicks-payment-card { border:2px solid #eee; border-radius:14px; cursor:pointer; overflow:hidden; transition:border-color .15s, background .15s, transform .1s; }
+.kicks-payment-card:hover { transform: translateY(-1px); }
+.kicks-payment-card input { display:none; }
+.kicks-payment-card-inner { display:flex; align-items:center; gap:14px; padding:16px 18px; }
+.kicks-payment-icon { font-size:1.6rem; width:40px; text-align:center; }
+.kicks-payment-name { font-weight:700; font-size:.98rem; }
+.kicks-payment-sub { font-size:.8rem; color:grey; margin-top:2px; }
+.kicks-payment-check { margin-left:auto; width:22px; height:22px; border-radius:50%; border:2px solid #ddd; display:flex; align-items:center; justify-content:center; font-size:.7rem; color:transparent; flex-shrink:0; }
+.kicks-payment-card.selected { border-color:#ff6c00; background:rgba(255,108,0,0.06); }
+.kicks-payment-card.selected .kicks-payment-check { background:#ff6c00; border-color:#ff6c00; color:#fff; }
+
+.kicks-place-btn { width:100%; padding:.9rem; border:none; border-radius:10px; font-weight:700; color:#fff; cursor:pointer; background:linear-gradient(90deg, #ffba00 0%, #ff6c00 100%); }
+.kicks-place-btn:disabled { background:#ccc; cursor:not-allowed; }
+
+.pay-order-summary { border:1px solid #eee; border-radius:14px; overflow:hidden; margin-bottom:22px; background:#fff; padding: 4px 20px; }
+.pay-form-panel { border:1px solid #eee; border-radius:14px; padding:22px; background:#fff; }

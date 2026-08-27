@@ -1,0 +1,40 @@
+.orders-content { width: 100%; align-items: stretch !important; padding: 2.5rem 3rem; }
+
+.stat-cards { display:flex; gap:16px; flex-wrap:wrap; margin: 1.5rem 0 2rem; }
+.stat-card { flex:1; min-width:150px; background:#fff; border:1px solid #eee; border-radius:14px; padding:18px 20px; box-shadow:0 2px 8px rgba(0,0,0,0.03); }
+.stat-label { font-size:.75rem; color:grey; font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
+.stat-value { font-size:1.6rem; font-weight:700; margin-top:6px; color:#1c1c1c; }
+.stat-card.accent .stat-value { color:#ff6c00; }
+.stat-card.warn .stat-value { color:#b45309; }
+.stat-card.good .stat-value { color:#166534; }
+
+.orders-toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:16px; }
+.filter-tabs { display:flex; gap:8px; flex-wrap:wrap; }
+.filter-tabs .tab {
+  border:1px solid #eee; background:#fff; padding:7px 16px; border-radius:999px;
+  font-size:.82rem; font-weight:600; cursor:pointer; color:#555; transition:all .15s;
+}
+.filter-tabs .tab.active { background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%); color:#fff; border-color:transparent; }
+#order-search { padding:8px 14px; border:1px solid #eee; border-radius:999px; min-width:240px; font-family:'Poppins',sans-serif; }
+
+.orders-table { width:100%; border-collapse:collapse; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin:0 !important; }
+.orders-table thead th { text-align:left; font-size:.72rem; text-transform:uppercase; letter-spacing:.4px; color:grey; background:#fafafa; padding:12px 16px; border-bottom:1px solid #eee; }
+.orders-table td { padding:14px 16px; border-bottom:1px solid #f5f5f5; font-size:.88rem; vertical-align:middle; }
+.order-row { cursor:pointer; }
+.order-row:hover { background:#fffaf0; }
+.toggle-arrow { display:inline-block; font-size:.65rem; color:#bbb; margin-left:6px; transition:transform .15s; }
+.toggle-arrow.rotated { transform: rotate(90deg); }
+
+.status-dropdown { border:none; border-radius:999px; padding:6px 12px; font-size:.78rem; font-weight:600; cursor:pointer; }
+.pill-status { padding:6px 12px; border-radius:999px; font-size:.78rem; font-weight:600; }
+
+.order-detail-row { display:none; }
+.order-detail-row.open { display:table-row; }
+.order-detail-row td { background:#fbfbfb; padding:0; }
+.order-detail-inner { padding: 16px 24px 20px; }
+.detail-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; }
+.detail-cell.full { grid-column: 1 / -1; }
+.dc-label { font-size:.68rem; text-transform:uppercase; letter-spacing:.4px; color:grey; font-weight:700; margin-bottom:3px; }
+.dc-value { font-size:.87rem; font-weight:600; color:#1c1c1c; }
+
+.row-delivered td { opacity: .85; }
